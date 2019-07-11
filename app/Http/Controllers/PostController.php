@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Schema;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use DB;
 
 class PostController extends Controller
 {
@@ -12,9 +14,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Post $post)
     {
-        //
+        dd(DB::select('SHOW FULL COLUMNS FROM ' . $post->getTable()));
+        dd(Schema::getColumnListing($post->getTable()));
     }
 
     /**

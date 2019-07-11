@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('test', 'GoogleSheetsController@index');
+Route::get('get_values', 'GoogleSheetsController@getValues');
+Route::get('aaa', 'PostController@index');
 
 Auth::routes();
 
