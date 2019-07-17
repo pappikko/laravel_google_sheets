@@ -12,12 +12,14 @@
 */
 
 Route::get('/', function () {
+    dd(__DIR__);
     return view('welcome');
 });
 
 Route::get('test', 'GoogleSheetsController@index');
 Route::get('get_values', 'GoogleSheetsController@getValues');
-Route::get('aaa', 'PostController@index');
+Route::get('fetchTableDefFromDb', 'DbManageController@fetchTableDefFromDb');
+Route::get('wright', 'DbManageController@wright');
 
 Auth::routes();
 

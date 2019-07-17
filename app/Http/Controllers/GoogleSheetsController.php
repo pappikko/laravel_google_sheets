@@ -17,6 +17,7 @@ class GoogleSheetsController extends Controller
 
     public function index()
     {
+        dd('/var/web');
         $spreadsheetId = env('LARAVEL_GOOGLE_SHEETS');
         $range = 'A:H';
         dd($this->getValues($spreadsheetId, $range)->getValues());
